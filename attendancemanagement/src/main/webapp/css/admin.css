@@ -1,0 +1,247 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* ===== BUBBLE CANVAS ===== */
+#bubbleCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* ===== SIDEBAR ===== */
+.admin-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    z-index: 2;
+}
+
+.admin-sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.admin-sidebar a {
+    display: block;
+    padding: 12px;
+    margin: 8px 0;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.admin-sidebar a:hover,
+.admin-sidebar a.active {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+.logout-btn {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+}
+
+/* ===== MAIN CONTENT ===== */
+.admin-content {
+    margin-left: 230px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== PAGE TITLE ===== */
+.page-title {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    font-size: 26px;
+    animation: fadeSlide 0.8s ease;
+    z-index: 2;
+}
+
+/* ===== GLASS CARD ===== */
+.glass-card {
+    width: 420px;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    backdrop-filter: blur(15px);
+    animation: fadeUp 0.8s ease;
+}
+
+/* ===== FORM ===== */
+.glass-card form {
+    margin-top: 10px;
+}
+
+/* ✅ FIXED INPUTS (NO OVERLAP EVER) */
+.glass-card form input,
+.glass-card form select {
+    width: 100%;
+    padding: 14px 16px 14px 46px; /* LEFT SPACE FOR ICON */
+    margin-bottom: 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: rgba(255,255,255,0.9);
+    color: #333;
+}
+
+/* Optional icon support */
+.glass-card form input {
+    background-position: 15px center;
+    background-repeat: no-repeat;
+}
+
+/* ===== BUTTON ===== */
+.glass-card button {
+    width: 100%;
+    padding: 13px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.glass-card button:hover {
+    transform: translateY(-2px);
+}
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+}
+
+table th {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+.action-btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin: 2px;
+}
+
+.edit-btn {
+    background: #28a745;
+}
+
+.delete-btn {
+    background: #dc3545;
+}
+
+/* ===== WIDE CARD FOR TABLES ===== */
+.glass-card.table-card {
+    width: 90%;
+    max-width: 1100px;
+    padding: 25px;
+}
+
+/* ===== CENTER FORM PAGES ===== */
+.center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* ===== ANIMATED BACKGROUND ===== */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        120deg,
+        #0f2027,
+        #203a43,
+        #2c5364,
+        #00c6ff
+    );
+    background-size: 400% 400%;
+    animation: bgMove 18s ease infinite;
+    z-index: -1;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* KEEP FORM ABOVE BG */
+.form-container {
+    position: relative;
+    z-index: 1;
+}
+.status-present { color: #00ff00; font-weight: bold; }
+.status-absent { color: #ff4b4b; font-weight: bold; }
+
+
+/* Logout button color */
+.btn.logout {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b); /* red-orange gradient */
+}
+
+.btn.logout:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+}

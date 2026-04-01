@@ -1,0 +1,160 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* BACKGROUND */
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #1e1e2f, #050510);
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* MULTI-LAYER BACKGROUND EFFECT */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    z-index: -2;
+    background-repeat: no-repeat;
+    background-size: 60% 60%;
+    animation: moveGlow 30s linear infinite;
+}
+
+/* LEFT GLOW */
+body::before {
+    background-image: radial-gradient(circle, #00f7ff55 0%, transparent 60%);
+    background-position: left center;
+}
+
+/* RIGHT GLOW */
+body::after {
+    background-image: radial-gradient(circle, #7a00ff55 0%, transparent 60%);
+    background-position: right center;
+    animation-direction: reverse;
+}
+
+@keyframes moveGlow {
+    0%   { transform: translateY(0) rotate(0deg); }
+    50%  { transform: translateY(-100px) rotate(180deg); }
+    100% { transform: translateY(0) rotate(360deg); }
+}
+
+@keyframes floatBG {
+    from { background-position: 0 0; }
+    to   { background-position: 1000px 1000px; }
+}
+
+/* CENTER BOX */
+.box {
+    width: 380px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 0 40px #00f7ff40;
+    animation: pop 1s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+/* CENTERING */
+.center {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* INPUTS */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+/* BUTTON */
+button, input[type="submit"] {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #00f7ff, #7a00ff);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px #00f7ff;
+}
+
+/* TITLES */
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* LINKS */
+a {
+    color: #00f7ff;
+    text-decoration: none;
+}
+/* FLOATING PARTICLES */
+.particles span {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: #ffffff40;
+    border-radius: 50%;
+    animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+    from {
+        transform: translateY(110vh) scale(0.4);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(-10vh) scale(1);
+        opacity: 1;
+    }
+}
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    /* BACKGROUND IMAGE */
+    background-image: url("../images/WhatsApp Image 2025-12-18 at 1.57.12 PM.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);  /* darkness */
+    z-index: -1;
+}

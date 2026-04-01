@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* BACKGROUND */
+body {
+    background: radial-gradient(circle at top, #1a1a40, #000);
+    color: #fff;
+    
+    
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00f2ff;
+    animation: glow 2s infinite alternate;
+}
+
+.logo-icon {
+    margin-right: 5px;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px #00f2ff; }
+    to { text-shadow: 0 0 20px #00f2ff; }
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #ddd;
+    font-weight: 500;
+}
+
+.login-btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #00f2ff, #8a2be2);
+    color: black !important;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-card {
+    background: rgba(255,255,255,0.08);
+    padding: 60px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(0,242,255,0.4);
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+.hero-card h1 {
+    font-size: 42px;
+    color: #00f2ff;
+}
+
+.hero-card p {
+    margin: 15px 0 30px;
+    color: #ccc;
+}
+
+.hero-btn {
+    padding: 14px 40px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #00f2ff, #8a2be2);
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* SECTIONS */
+.about, .features, .contact {
+    padding: 100px 60px;
+    text-align: center;
+}
+
+.about h2, .contact h2 {
+    color: #00f2ff;
+    margin-bottom: 20px;
+}
+
+/* FEATURES */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.feature-card {
+    width: 260px;
+    background: rgba(255,255,255,0.1);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(138,43,226,0.4);
+    transition: 0.4s;
+}
+
+.feature-card:hover {
+    transform: translateY(-15px) scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    text-align: center;
+    padding: 20px;
+    color: #888;
+}
